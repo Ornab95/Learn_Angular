@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  title: string = 'Login To MyApp';//String Interpolation //Property Binding
+  title: string = 'Login To MyApp';//String   Interpolation //Property Binding
 
 }

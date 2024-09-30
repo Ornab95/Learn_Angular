@@ -1,0 +1,10 @@
+.active{
+    background-color: #4CAF50;
+    color: white;
+    border: yellow;
+}
+.notActive{
+    background-color: #e84a4a;
+
+    border: rgb(0, 0, 0);
+}

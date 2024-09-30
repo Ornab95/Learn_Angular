@@ -12,4 +12,6 @@ import { LoginComponent } from "./login/login.component";
 })
 export class AppComponent {
   title = 'MyApp';
+  isDisabled: boolean = true;
+  isActive: boolean = true;
 }
