@@ -4,11 +4,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from "./login/login.component";
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AddEmployeeComponent } from "./add-employee/add-employee.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, LoginComponent, NgIf, FormsModule],
+  imports: [RouterOutlet, NavbarComponent, LoginComponent, NgIf, FormsModule, AddEmployeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -18,7 +19,8 @@ export class AppComponent {
   userName: string = "Ornab-95 is Good Boy";
   massage: string = "Welcome to my App";
   loginAttempts: number = 0;
-
+username : string = 'ornab';
+password : string = 'admin';
   // Login data
   usernameInput: string = '';
   passwordInput: string = '';
@@ -29,6 +31,7 @@ export class AppComponent {
   // Timer state
   timerRunning: boolean = false;
   remainingTime: number = 30;  // 30-second countdown timer
+loginError: any;
 
   // Count login attempts
   countLoginAttempt() {
@@ -72,5 +75,14 @@ export class AppComponent {
   // Remaining login attempts
   get loginAttempt(): number {
     return this.maxAttempts - this.loginAttempts;
+  }
+  // Check login credentials
+  checkLogin() {
+    if (this.usernameInput === this.username && this.passwordInput === this.password) {
+      alert('Login successful');
+      this.resetLoginAttempts(); // Reset login attempts on successful login
+    } else {
+      this.countLoginAttempt(); // Increment login attempts on failed login
+    }
   }
 }
