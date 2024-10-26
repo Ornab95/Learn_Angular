@@ -1,7 +1,10 @@
 <div class="flex flex-row w-full gap-2 mt-5 p-4">
-  <div id="div1" class="w-full p-5 h-24 bg-red-500 flex items-center justify-center">Div 1</div>
-  <div id="div2" class="w-full p-5 h-24 bg-blue-500 flex items-center justify-center">Div 2</div>
-  <div id="div3" class="w-full p-5 h-24 bg-green-500 flex items-center justify-center">Div 3</div>
+
+  <div *ngIf="isVisible" class="w-full p-5 h-24 bg-red-500 flex items-center justify-center">
+    <h4>Div 1</h4>
+  </div>
+  <div *ngIf="div2" class="w-full p-5 h-24 bg-blue-500 flex items-center justify-center">Div 2</div>
+  <div id="div3" *ngIf="name1==name2" class="w-full p-5 h-24 bg-green-500 flex items-center justify-center">Div 3</div>
   <div id="div4" class="w-full p-5 h-24 bg-yellow-500 flex items-center justify-center">Div 4</div>
 </div>
 
@@ -11,11 +14,11 @@
     <button class="bg-red-500 p-2 rounded" (click)="hide()">Hide</button>
   </div>
   <div id="div2" class="w-full p-5 h-24 flex items-center justify-center gap-2">
-    <button class="bg-green-500 p-2 rounded" (click)="toggle()">Toggle</button>
+    <button class="bg-green-500 p-2 rounded" (click)="visible()">Toggle</button>
   </div>
-  <div id="div3" class="w-full p-5 h-24 flex items-center justify-center gap-2">
-    <input type="text" class="p-2 border border-gray-300 rounded">
-    <input type="text" class="p-2 border border-gray-300 rounded">
+  <div id=" div3" class="w-full p-5 h-24 flex items-center justify-center gap-2">
+    <input type="text" [(ngModel)]="name1" class="p-2 border border-gray-300 rounded">
+    <input type="text" [(ngModel)]="name2" class="p-2 border border-gray-300 rounded">
   </div>
   <div id="div4" class="w-full p-5 h-24 bg-yellow-500 flex items-center justify-center">Div 4</div>
 </div>
