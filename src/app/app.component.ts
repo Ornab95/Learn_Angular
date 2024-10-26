@@ -5,11 +5,12 @@ import { LoginComponent } from "./login/login.component";
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from "./add-employee/add-employee.component";
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, LoginComponent, NgIf, FormsModule, AddEmployeeComponent],
+  imports: [RouterOutlet,StructuralDirectiveComponent, NavbarComponent, LoginComponent, NgIf, FormsModule, AddEmployeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
